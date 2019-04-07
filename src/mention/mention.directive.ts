@@ -123,7 +123,7 @@ export class MentionDirective implements OnChanges {
     this.triggerChars[config.triggerChar] = config;
 
     // for async update while menu/search is active
-    if (this.activeConfig && this.activeConfig.triggerChar==config.triggerChar) {
+    if (this.activeConfig && this.activeConfig.triggerChar==config.triggerChar && !this.stopSearch) {
       this.activeConfig = config;
       this.updateSearchList();
     }
